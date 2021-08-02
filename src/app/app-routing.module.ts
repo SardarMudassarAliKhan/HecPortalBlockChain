@@ -9,6 +9,12 @@ import { UniversityDashBoardComponent } from './university/university-dash-board
 import { UniversityStudentComponent } from './university/university-student/university-student.component';
 import { UniversityComponent } from './university/university.component';
 import { UploadDocumentComponent } from './university/upload-document/upload-document.component';
+import { HomeComponent } from './hecportal/home/home.component';
+import { NavbaruniversityComponent } from './navbaruniversity/navbaruniversity.component';
+import { HECPortalComponent } from './hecportal/hecportal.component';
+import { SearchDocumentComponent } from './hecportal/search-document/search-document.component';
+import { DocumentViewerComponent } from './hecportal/document-viewer/document-viewer.component';
+import { HecDashBoardComponent } from './hecportal/hec-dash-board/hec-dash-board.component';
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'NavbarComponent',component: NavbarComponent},
@@ -19,9 +25,13 @@ const routes: Routes = [
   {path:'UniversityDashBoard',component: UniversityDashBoardComponent},
   {path:'UploadDocument',component: UploadDocumentComponent},
   {path:'UniversityStudent',component: UniversityStudentComponent},
+  {path:'HECPortal',component:HECPortalComponent},
+  {path:'HecPublicPortal',component:HomeComponent},
+  {path:'Navbaruniversity',component:NavbaruniversityComponent},
+  {path:'SearchDocument',component:SearchDocumentComponent},
+  {path:'DocumentViewer',component:DocumentViewerComponent},
+  {path:'HecDashBoard',component:HecDashBoardComponent},
   {path:'**',component:LoginComponent}
-
-
 ];
 
 @NgModule({
@@ -29,5 +39,13 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingcomponent = [LoginComponent,NavbarComponent,UniversityComponent,StudentDashBoardComponent,
-  StudentInformationComponent,StudentDocumentComponent,UniversityDashBoardComponent,UploadDocumentComponent,UniversityStudentComponent];
+export const routingcomponent = [LoginComponent,
+  NavbarComponent,UniversityComponent,StudentDashBoardComponent,
+  StudentInformationComponent,StudentDocumentComponent,
+  UniversityDashBoardComponent,UploadDocumentComponent,
+  UniversityStudentComponent,HECPortalComponent,
+  NavbaruniversityComponent,HomeComponent,
+  SearchDocumentComponent,
+  DocumentViewerComponent,
+  HecDashBoardComponent
+];

@@ -14,4 +14,5 @@ export class LoginComponent implements OnInit {
   redirect() {
       this.router.navigate(['StudentDashBoard']);
   }
+
 }
