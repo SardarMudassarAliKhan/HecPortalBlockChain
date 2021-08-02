@@ -15,6 +15,12 @@ import { HECPortalComponent } from './hecportal/hecportal.component';
 import { SearchDocumentComponent } from './hecportal/search-document/search-document.component';
 import { DocumentViewerComponent } from './hecportal/document-viewer/document-viewer.component';
 import { HecDashBoardComponent } from './hecportal/hec-dash-board/hec-dash-board.component';
+import { HecdegreeverificationComponent } from './hecportal/hecVerification/hecdegreeverification/hecdegreeverification.component';
+import { DegreesInPendingComponent } from './hecportal/hecVerification/degrees-in-pending/degrees-in-pending.component';
+import { DegreesVerifiedComponent } from './hecportal/hecVerification/degrees-verified/degrees-verified.component';
+import { DegreesRejectedComponent } from './hecportal/hecVerification/degrees-rejected/degrees-rejected.component';
+import { DegreeInProcessComponent } from './hecportal/hecVerification/degree-in-process/degree-in-process.component';
+
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'NavbarComponent',component: NavbarComponent},
@@ -31,6 +37,13 @@ const routes: Routes = [
   {path:'SearchDocument',component:SearchDocumentComponent},
   {path:'DocumentViewer',component:DocumentViewerComponent},
   {path:'HecDashBoard',component:HecDashBoardComponent},
+  {path:'Hecdegreeverification',component:HecdegreeverificationComponent},
+  {path:'DegreeInProcess',component:DegreeInProcessComponent},
+  {path:'DegreesInPending',component:DegreesInPendingComponent},
+  {path:'DegreesVerified',component:DegreesVerifiedComponent},
+  {path:'DegreesRejectedComponent',component:DegreesRejectedComponent},
+
+  {path:''}
   {path:'**',component:LoginComponent}
 ];
 
@@ -40,12 +53,23 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingcomponent = [LoginComponent,
-  NavbarComponent,UniversityComponent,StudentDashBoardComponent,
-  StudentInformationComponent,StudentDocumentComponent,
-  UniversityDashBoardComponent,UploadDocumentComponent,
-  UniversityStudentComponent,HECPortalComponent,
-  NavbaruniversityComponent,HomeComponent,
+  NavbarComponent,
+  UniversityComponent,
+  StudentDashBoardComponent,
+  StudentInformationComponent,
+  StudentDocumentComponent,
+  UniversityDashBoardComponent,
+  UploadDocumentComponent,
+  UniversityStudentComponent,
+  HECPortalComponent,
+  NavbaruniversityComponent,
+  HomeComponent,
   SearchDocumentComponent,
   DocumentViewerComponent,
-  HecDashBoardComponent
+  HecDashBoardComponent,
+  HecdegreeverificationComponent,
+  DegreeInProcessComponent,
+  DegreesInPendingComponent,
+  DegreesVerifiedComponent,
+  DegreesRejectedComponent
 ];
