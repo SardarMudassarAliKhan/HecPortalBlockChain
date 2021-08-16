@@ -26,24 +26,22 @@ const routes: Routes = [
   {path:'NavbarComponent',component: NavbarComponent},
   {path:'UniversityComponent',component: UniversityComponent},
   {path:'StudentDashBoard',component: StudentDashBoardComponent},
-  {path:'StudentInformation',component: StudentInformationComponent},
+    {path:'StudentInformation',component: StudentInformationComponent},
   {path:'StudentDocuments',component: StudentDocumentComponent},
-  {path:'UniversityDashBoard',component: UniversityDashBoardComponent},
-  {path:'UploadDocument',component: UploadDocumentComponent},
+    {path:'UniversityDashBoard/:id',component: UniversityDashBoardComponent},
+    {path:'UploadDocument',component: UploadDocumentComponent},
   {path:'UniversityStudent',component: UniversityStudentComponent},
   {path:'HECPortal',component:HECPortalComponent},
   {path:'HecPublicPortal',component:HomeComponent},
   {path:'Navbaruniversity',component:NavbaruniversityComponent},
-  {path:'SearchDocument',component:SearchDocumentComponent},
-  {path:'DocumentViewer',component:DocumentViewerComponent},
+    {path:'SearchDocument',component:SearchDocumentComponent},
+    {path:'DocumentViewer/:id',component:DocumentViewerComponent},
   {path:'HecDashBoard',component:HecDashBoardComponent},
   {path:'Hecdegreeverification',component:HecdegreeverificationComponent},
   {path:'DegreeInProcess',component:DegreeInProcessComponent},
   {path:'DegreesInPending',component:DegreesInPendingComponent},
   {path:'DegreesVerified',component:DegreesVerifiedComponent},
   {path:'DegreesRejectedComponent',component:DegreesRejectedComponent},
-
-  {path:''}
   {path:'**',component:LoginComponent}
 ];
 

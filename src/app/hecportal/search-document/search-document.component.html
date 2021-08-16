@@ -1,1 +1,20 @@
-<p>search-document works!</p>
+<div class="sidenav">
+    <div class="login-main-text">
+        <h1>GLOBAL SEARCH PORTAL</h1>
+       <h2>HEC PORTAL BLOCK CHAIN USE CASE</h2>
+    </div>
+  </div>
+  <div class="main">
+    <div class="col-sm-12">
+      <div class="login-form">
+        <h2>Search Document</h2>
+        <form class="form-inline" #formData="ngForm" (ngSubmit)="getData(formData.value)">
+          <input class="form-control mr-sm-2" ngModel type="search" placeholder="Search By CNIC" name = 'cnic' aria-label="Search">
+          <button  class="btn btn-outline-success my-2 my-sm-0">Search</button>
+        </form>
+       </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  
+  

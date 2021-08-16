@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { APIService } from 'src/app/api.service';
+
 
 @Component({
   selector: 'app-degrees-in-pending',
@@ -9,22 +11,28 @@ import { Component, OnInit } from '@angular/core';
 export class DegreesInPendingComponent implements OnInit {
 
   title = 'datatables';
-  dtOptions: DataTables.Settings = {};
-  posts={};
-  constructor(private http: HttpClient) { }
+  constructor(private API: APIService) { }
+
+
+  userData: any
+  baseUrl: any = 'http://localhost:6060/students/'
+
+
 
   ngOnInit(): void {
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 5,
-      processing: true
-    };
-  
-    this.http.get('http://jsonplaceholder.typicode.com/posts')
-      .subscribe(posts => {
-        this.posts = posts;
-    });
+    this.getData()
   }
-  
+
+
+
+
+  async getData() {
+    let url = this.baseUrl
+    // console.log(url, val)
+    // need to call api and get data return it to the html page
+    await this.API.apiGetDBData(url).then(res => { (this.userData = res); })
+
+  }
+
 
 }

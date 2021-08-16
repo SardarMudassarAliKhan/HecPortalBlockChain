@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router , ActivatedRoute, ParamMap } from '@angular/router';
+
 @Component({
   selector: 'app-search-document',
   templateUrl: './search-document.component.html',
@@ -7,13 +8,19 @@ import { Router } from '@angular/router';
 })
 export class SearchDocumentComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  redirect() {
-      this.router.navigate(['DocumentViewer']);
+  getData(val:any) {
+
+    // use id to get data here!!!
+    // pass the returned data to the document viewer component
+
+      this.router.navigate(['DocumentViewer/'+val.cnic]);
   }
 
 }
