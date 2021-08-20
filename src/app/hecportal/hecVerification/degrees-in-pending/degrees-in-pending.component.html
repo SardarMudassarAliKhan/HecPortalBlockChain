@@ -1,25 +1,26 @@
-<h1>Angular Datatables Step by Step Example - ItSolutionStuff.com</h1>
-<table>
-  <thead>
+<app-navbar></app-navbar>
+
+<h3 style="margin-top: 20px; margin-left: 10%;margin-right: 10%;">Degrees Pending</h3>
+
+
+
+
+<table id="data">
     <tr>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-
-    
-    <tr *ngFor="let data of userData">
-      <div *ngIf="data.status != true">
-        <td><a href=""> {{ data.cnic }}</a></td>
-        <td>{{ data.email }}</td>
-        <td>{{ data.contact }}</td>
-        <td>{{data.status}}</td>
-      </div>
+        <th>CNIC</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Status</th>
     </tr>
 
+    <tr *ngFor=" let user of userData ">
 
-  </tbody>
+        <!-- <div *ngIf="user.status != true && user.to_verify==true"> -->
+        <td><a href="DegreeInProcess/{{user.cnic}}"> {{ user.cnic }}</a></td>
+
+        <td>{{ user.email }}</td>
+        <td>{{ user.department }}</td>
+        <td *ngIf="user.status !=true" style="color: wheat;  font-weight: bold; background-color: rgb(192, 29, 29);">Pending</td>
+        <!-- </div> -->
+    </tr>
 </table>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {APIService} from '../../api.service'
+import { APIService } from '../../api.service'
 
 @Component({
   selector: 'app-document-viewer',
@@ -10,48 +10,45 @@ import {APIService} from '../../api.service'
 
 export class DocumentViewerComponent implements OnInit {
 
-  userData:any = ''
-  baseUrl:any = 'http://localhost:6060/students/'
-  id:any
-  
+  userData: any = ''
+  baseUrl: any = 'http://localhost:6060/students/'
+  id: any
+
   constructor(
     private route: ActivatedRoute,
-    private API:APIService) { }
+    private API: APIService) { }
 
-    
-    event :boolean = false
-    show :boolean = false
-    state :boolean = false
 
-  ngOnInit(): void {
+  event: boolean = false
+  show: boolean = false
+  state: boolean = false
+
+  async ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     // getting id here need to get data from backend using the id which got here
-    this.getData(this.id)
+    await this.getData(this.id)
 
-    if (this.userData == null){
+    if (this.userData == null) {
       this.state = false
     }
 
-    else{
+    else {
       this.state = true
     }
-  
+
   }
 
 
-  async getData(val:any){
-    let url = this.baseUrl+ val
-    // console.log(url, val)
+  async getData(val: any) {
+    let url = 'http://localhost:6060/posts/' + val
     // need to call api and get data return it to the html page
-    await this.API.apiGetDBData(url).then(res => {(this.userData=res);})
-    
-      if (this.userData.status == false || ''){
-      this.event = true
-      this.userData.remarks = ''
+    await this.API.apiGetDBData(url).then(res => { (this.userData = res); })
+    if (this.userData.result == 'No record Found') {
+      this.userData = null
     }
-    if (this.userData.status == true){
-      this.show = true
-      
-    } 
+
+    else {
+      this.userData = JSON.parse(this.userData)
+    }
   }
 }

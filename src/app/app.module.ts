@@ -6,6 +6,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SearchPendingComponent } from './hecportal/hecVerification/search-pending/search-pending.component';
+import { NgxCsvParserModule } from 'ngx-csv-parser';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SearchPendingComponent } from './hecportal/hecVerification/search-pendi
     DataTablesModule,
     HttpClientModule,
     FormsModule,
+    NgxCsvParserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

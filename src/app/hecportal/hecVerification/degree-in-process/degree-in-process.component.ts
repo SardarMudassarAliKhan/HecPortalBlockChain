@@ -9,7 +9,8 @@ import { APIService } from 'src/app/api.service';
 export class DegreeInProcessComponent implements OnInit {
   constructor(private API: APIService) { }
 
-  userData: any
+  data: any
+  userData: any = []
   baseUrl: any = 'http://localhost:6060/students/'
 
   ngOnInit(): void {
@@ -20,7 +21,14 @@ export class DegreeInProcessComponent implements OnInit {
     let url = this.baseUrl
     // console.log(url, val)
     // need to call api and get data return it to the html page
-    await this.API.apiGetDBData(url).then(res => { (this.userData = res); })
+    await this.API.apiGetDBData(url).then(res => { (this.data = res); })
+
+    for (var data of this.data) {
+      if (data.status!=true) { 
+        this.userData.push(data)
+      }
+    }
+
 
   }
 }

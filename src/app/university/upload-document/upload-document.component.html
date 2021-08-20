@@ -1,82 +1,83 @@
-<div class="container" >
-  <form #formData="ngForm" (ngSubmit)="getData(formData.value)">
+<div class="container">
+    <form #formData="ngForm" (ngSubmit)="getData(formData.value)" *ngIf="userData != null">
 
-    <h3>Insert Subjects with Grades or Upload Grades sheet:
-    </h3>
-    <div class="row">
-      <div class="col-sm-3">
-        <form>
-          <div class="form-group">
-            <label>CGPA </label>
-          </div>
-        </form>
-      </div>
-      <div class="col-sm-3">
-        <div class="form-group">
-          <input ngModel name='cgpa' type="text" class="form-control" placeholder="Enter CGPA">
+        <h3>Insert Subjects with Grades or Upload Grades sheet:
+        </h3>
+        <div class="row">
+            <div class="col-sm-3">
+                <form>
+                    <div class="form-group">
+                        <label>CGPA </label>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <input ngModel name='cgpa' type="text" class="form-control" placeholder="Enter CGPA">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label>Remarks</label>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <input ngModel name='remarks' type="text" class="form-control" placeholder="Enter remarks">
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="form-group">
-          <label>Remarks</label>
+        <hr>
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Upload Transcript:</label>
+            </div>
+            <div class="col-sm-4">
+                <input type="file" class="form-control" placeholder="Enter your name">
+            </div>
+            <div class="col-sm-4">
+            </div>
         </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="form-group">
-          <input ngModel name='remarks' type="text" class="form-control" placeholder="Enter remarks">
+        <button type="submit" class="btn btn-success">Save</button>
+
+    </form>
+
+    <br><br><br>
+
+    <form #approveFrom="ngForm" (ngSubmit)="approve(approveFrom.value)" *ngIf="userData.to_verify!=true; else elseBlock">
+        <h4>Request to Verify :
+        </h4>
+        <label>I understand the terms and proceed to Verify</label>
+        <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-3">
+                <label>I confirm :</label>
+            </div>
+            <div class="col-sm-3">
+                <input type="checkbox">
+            </div>
         </div>
-      </div>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col-sm-4">
-        <label>Upload Transcript:</label>
-      </div>
-      <div class="col-sm-4">
-        <input type="file" class="form-control" placeholder="Enter your name">
-      </div>
-      <div class="col-sm-4">
-      </div>
-    </div>
-    <button type="submit" class="btn btn-success">Save</button>
 
-  </form>
-
-  <br><br><br>
-
-  <form #approveFrom="ngForm" (ngSubmit)="approve(approveFrom.value)" *ngIf="userData.to_verify!=true; else elseBlock">
-    <h4>Request to Verify :
-    </h4>
-    <label>I understand the terms and proceed to Verify</label>
-    <div class="row">
-      <div class="col-sm-3">
-      </div>
-      <div class="col-sm-3">
-      </div>
-      <div class="col-sm-3">
-        <label>I confirm :</label>
-      </div>
-      <div class="col-sm-3">
-        <input type="checkbox">
-      </div>
-    </div>
-
-    <div class="col-sm-3">
-      <div class="form-group">
-        <label>Do you want to Verify the Transcript!</label>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="form-group">
-        <input ngModel name='to_verify' type="text" class="form-control" placeholder="Enter yes / no">
-      </div>
-    </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label>Do you want to Verify the Transcript!</label>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <input ngModel name='to_verify' type="text" class="form-control" placeholder="Enter yes / no">
+            </div>
+        </div>
 
 
 
-    <button type="submit" class="btn btn-success">Save</button>
-  </form>
-<ng-template #elseBlock>
-  <h1 style="color: red;">In process to Verify by HEC!</h1>
-</ng-template>
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+    <ng-template #elseBlock>
+        <h1 *ngIf="userData.status!=true">In process to Verify by HEC!</h1>
+        <h1 *ngIf="userData.status">Verified by HEC!</h1>
+    </ng-template>
 </div>

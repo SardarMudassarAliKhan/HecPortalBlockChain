@@ -19,8 +19,9 @@ export class SearchDocumentComponent implements OnInit {
 
     // use id to get data here!!!
     // pass the returned data to the document viewer component
-
-      this.router.navigate(['DocumentViewer/'+val.cnic]);
+    let date: Date = new Date();  
+    console.log(date, 'date time')
+    this.router.navigate(['DocumentViewer/'+val.cnic]);
   }
 
 }

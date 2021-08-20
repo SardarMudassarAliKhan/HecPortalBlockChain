@@ -1,13 +1,124 @@
-<p>search-pending works!</p>
+<div class="container" *ngIf="userData.to_verify">
+    <h3>Document Details</h3>
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Name:</label>
+                </div>
+                <div class="col-sm-6">
+                    <label>{{userData.name}}
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Father Name:</label>
+                </div>
+                <div class="col-sm-6">
+                    <label>{{userData.father_name}}
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Department</label>
+                </div>
+                <div class="col-sm-6">
+                    <label>{{userData.department}}
+                    </label>
+                </div>
+            </div>
 
-<h1>ad</h1>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Date of Birth</label>
+                </div>
+                <div class="col-sm-6">
+                    <label>{{userData.date_of_birth}}
+                    </label>
+                </div>
+            </div>
 
 
-<div>
-<!-- <form>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Contact</label>
+                </div>
+                <div class="col-sm-6">
+                    <label>{{userData.contact}}
+                    </label>
+                </div>
+            </div>
 
 
-</form> -->
-<input type="text" name="cnic", placeholder="Enter CNIC">
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>CNIC</label>
+                </div>
+                <div class="col-sm-6">
+                    <label>{{userData.cnic}}
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Email</label>
+                </div>
+                <div class="col-sm-6">
+                    <label>{{userData.email}}
+                    </label>
+                </div>
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>CGPA</label>
+                </div>
+                <div class="col-sm-6">
+                    <label>{{userData.cgpa}}
+                    </label>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-sm-5">
+            <img src="https://villamiproperties.com/wp-content/uploads/2018/01/profile-avatar.png" alt="https://villamiproperties.com/wp-content/uploads/2018/01/profile-avatar.png">
+        </div>
+    </div>
+
+    <div>
+        <h1 *ngIf="userData.status!=true; else elseBlock" style="color: rgb(253, 0, 0); margin-left: 20%;">The Degree is UNAPPROVED yet!!!
+        </h1>
+        <div *ngIf="userData.status!=true">
+            <form (ngSubmit)="approve() ">
+                <button type="submit " name="update " value="Approve Degree "> Verify now</button>
+            </form>
+        </div>
+        <ng-template #elseBlock>
+            <h1 style="color: seagreen; margin-left: 20%;"> The Degree is now APPROVED. </h1>
+            <h3>Document Picture</h3>
+            <!-- <div class="col-sm-12 ">
+          <img src=" " alt=" " >
+        </div> -->
+        </ng-template>
+
+
+    </div>
+
+    <div>
+    </div>
+
 
 </div>

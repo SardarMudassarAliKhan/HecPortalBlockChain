@@ -20,6 +20,7 @@ import { DegreesInPendingComponent } from './hecportal/hecVerification/degrees-i
 import { DegreesVerifiedComponent } from './hecportal/hecVerification/degrees-verified/degrees-verified.component';
 import { DegreesRejectedComponent } from './hecportal/hecVerification/degrees-rejected/degrees-rejected.component';
 import { DegreeInProcessComponent } from './hecportal/hecVerification/degree-in-process/degree-in-process.component';
+import { SearchPendingComponent } from './hecportal/hecVerification/search-pending/search-pending.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path:'HecDashBoard',component:HecDashBoardComponent},
   {path:'Hecdegreeverification',component:HecdegreeverificationComponent},
   {path:'DegreeInProcess',component:DegreeInProcessComponent},
+    {path:'DegreeInProcess/:id',component:SearchPendingComponent},
   {path:'DegreesInPending',component:DegreesInPendingComponent},
   {path:'DegreesVerified',component:DegreesVerifiedComponent},
   {path:'DegreesRejectedComponent',component:DegreesRejectedComponent},
@@ -67,6 +69,7 @@ export const routingcomponent = [LoginComponent,
   HecDashBoardComponent,
   HecdegreeverificationComponent,
   DegreeInProcessComponent,
+  SearchPendingComponent,
   DegreesInPendingComponent,
   DegreesVerifiedComponent,
   DegreesRejectedComponent
