@@ -1,5 +1,7 @@
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+
 import { LoginComponent } from './Account/login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { StudentDashBoardComponent } from './Student/student-dash-board/student-dash-board.component';
@@ -21,6 +23,12 @@ import { DegreesVerifiedComponent } from './hecportal/hecVerification/degrees-ve
 import { DegreesRejectedComponent } from './hecportal/hecVerification/degrees-rejected/degrees-rejected.component';
 import { DegreeInProcessComponent } from './hecportal/hecVerification/degree-in-process/degree-in-process.component';
 import { SearchPendingComponent } from './hecportal/hecVerification/search-pending/search-pending.component';
+import { UniversityHomeComponent } from './university-home/university-home.component';
+import { NewStudentsComponent } from './university/new-students/new-students.component';
+import { UpdatedStudentsComponent } from './university/updated-students/updated-students.component';
+import { InprocessStudentsComponent } from './university/inprocess-students/inprocess-students.component';
+import { VerifiedStudentsComponent } from './university/verified-students/verified-students.component';
+import { AllStudentsComponent } from './university/all-students/all-students.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -29,12 +37,20 @@ const routes: Routes = [
   {path:'StudentDashBoard',component: StudentDashBoardComponent},
     {path:'StudentInformation',component: StudentInformationComponent},
   {path:'StudentDocuments',component: StudentDocumentComponent},
+
+    {path:'UniversityNewStudents',component: NewStudentsComponent},
+    {path:'UniversityUpdatedStudents',component: UpdatedStudentsComponent},
+    {path:'UniversityInprocessStudents',component: InprocessStudentsComponent},
+    {path:'UniversityVerifiesStudents',component: VerifiedStudentsComponent},
+    {path:'UniversityAllStudents',component: AllStudentsComponent},
+
+    {path:'UniversityDashBoard',component: UniversityHomeComponent},
     {path:'UniversityDashBoard/:id',component: UniversityDashBoardComponent},
     {path:'UploadDocument',component: UploadDocumentComponent},
   {path:'UniversityStudent',component: UniversityStudentComponent},
   {path:'HECPortal',component:HECPortalComponent},
   {path:'HecPublicPortal',component:HomeComponent},
-  {path:'Navbaruniversity',component:NavbaruniversityComponent},
+    {path:'Navbaruniversity',component:NavbaruniversityComponent},
     {path:'SearchDocument',component:SearchDocumentComponent},
     {path:'DocumentViewer/:id',component:DocumentViewerComponent},
   {path:'HecDashBoard',component:HecDashBoardComponent},
@@ -58,6 +74,14 @@ export const routingcomponent = [LoginComponent,
   StudentDashBoardComponent,
   StudentInformationComponent,
   StudentDocumentComponent,
+
+  NewStudentsComponent,
+  UpdatedStudentsComponent,
+  InprocessStudentsComponent,
+  VerifiedStudentsComponent,
+  AllStudentsComponent,
+
+  UniversityHomeComponent,
   UniversityDashBoardComponent,
   UploadDocumentComponent,
   UniversityStudentComponent,

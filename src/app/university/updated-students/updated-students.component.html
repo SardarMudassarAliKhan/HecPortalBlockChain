@@ -1,0 +1,29 @@
+<app-navbaruniversity></app-navbaruniversity>
+<h3 style="margin-top: 20px; margin-left: 10%;margin-right: 10%;">Updated Students</h3>
+
+
+<table id="data">
+    <tr>
+        <th>Name</th>
+        <th>CNIC</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Update Data</th>
+
+    </tr>
+
+    <tr *ngFor=" let user of userData ">
+
+        <td>{{ user.name }}</td>
+
+        <td><a href="UniversityDashBoard/{{user.cnic}}"> {{ user.cnic }}</a></td>
+
+        <td>{{ user.email }}</td>
+
+        <td>{{ user.department }}</td>
+
+        <td style="color: wheat;  font-weight: bold; background-color: rgb(97, 65, 6);">
+            <a href="UniversityDashBoard/{{user.cnic}}"> Click to View</a>
+        </td>
+    </tr>
+</table>

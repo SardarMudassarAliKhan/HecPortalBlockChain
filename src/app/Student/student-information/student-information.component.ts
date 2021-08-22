@@ -51,8 +51,14 @@ export class StudentInformationComponent implements OnInit {
   }
 
   onSelectFile(e: any) {
-    const profile:File = e.target.files[0]
+    let url = this.baseUrl + 'students'
 
+    const profile:File = e.target.files[0]
+    const fd = new FormData();
+    fd.append('image', profile, profile.name)
+    this.API.apiPostData(url, fd)
+
+    console.log(fd)
     if (e.target.files) {
       var reader = new FileReader();
       reader.readAsDataURL(e.target.files[0]);

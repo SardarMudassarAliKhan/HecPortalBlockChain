@@ -1,0 +1,36 @@
+<app-navbaruniversity></app-navbaruniversity>
+<h3 style="margin-top: 20px; margin-left: 10%;margin-right: 10%;">All Students</h3>
+
+
+<table id="data">
+    <tr>
+        <th>Name</th>
+        <th>CNIC</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Verified</th>
+        <th>Update Data</th>
+
+    </tr>
+
+    <tr *ngFor=" let user of userData ">
+
+        <td>{{ user.name }}</td>
+
+        <td><a href="DocumentViewer/{{user.cnic}}"> {{ user.cnic }}</a></td>
+
+        <td>{{ user.email }}</td>
+
+        <td>{{ user.department }}</td>
+
+        <td *ngIf="user.status; else elseBlock " style="color: rgb(18, 124, 64); font-weight: bold;"> Verified</td>
+        <ng-template #elseBlock>
+
+            <td style="color: rgb(226, 162, 162); font-weight: bold; background-color: rgb(211, 45, 15);"> Not Verified</td>
+        </ng-template>
+
+        <td style="color: wheat;  font-weight: bold; background-color: rgb(97, 65, 6);">
+            <a href="DocumentViewer/{{user.cnic}}"> Click to View</a>
+        </td>
+    </tr>
+</table>

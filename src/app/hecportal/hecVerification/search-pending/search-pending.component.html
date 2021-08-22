@@ -103,7 +103,7 @@
         </h1>
         <div *ngIf="userData.status!=true">
             <form (ngSubmit)="approve() ">
-                <button type="submit " name="update " value="Approve Degree "> Verify now</button>
+                <button type="submit " name="update " value="Approve Degree "> <b style="color: white;">Verify now</b> </button>
             </form>
         </div>
         <ng-template #elseBlock>
