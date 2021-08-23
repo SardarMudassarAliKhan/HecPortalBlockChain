@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-hecdegreeverification',
   templateUrl: './hecdegreeverification.component.html',
@@ -11,21 +12,19 @@ export class HecdegreeverificationComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+
   }
-  Inprogress()
-  {
+
+  Inprogress() {
     this.router.navigate(['DegreeInProcess']);
   }
-  Inpending()
-  {
+  Inpending() {
     this.router.navigate(['DegreesInPending']);
   }
-  Verified()
-  {
+  Verified() {
     this.router.navigate(['DegreesVerified']);
   }
-  Rejected()
-  {
+  Rejected() {
     this.router.navigate(['DegreesRejectedComponent']);
   }
 }

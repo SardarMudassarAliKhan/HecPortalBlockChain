@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router , ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-document',
@@ -15,13 +15,8 @@ export class SearchDocumentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getData(val:any) {
-
-    // use id to get data here!!!
-    // pass the returned data to the document viewer component
-    let date: Date = new Date();  
-    console.log(date, 'date time')
-    this.router.navigate(['DocumentViewer/'+val.cnic]);
+  getData(val: any) {
+    this.router.navigate(['DocumentViewer/' + val.cnic]);
   }
 
 }

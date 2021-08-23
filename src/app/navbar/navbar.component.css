@@ -1,9 +1,23 @@
-#navbar
-{
-    background-color:#8bc240;
+#navbar {
+    background-color: #8bc240;
 }
-.navbar a
-{
-font-weight:bold;
-color:#ffffff;
+
+.navbar a {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.nav_search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    border-radius: 50px;
+}
+
+button:hover {
+    background-color: #b4df78;
+    border: 1px solid #8bc240;
 }

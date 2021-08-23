@@ -20,8 +20,9 @@
 
         <td>{{ user.email }}</td>
         <td>{{ user.department }}</td>
-        <td *ngIf="user.status !=true" style="color: wheat;  font-weight: bold; background-color: rgb(192, 135, 29);">
-            In-Process</td>
+        <td>
+            <a style="font-weight: bold; color: tomato;" href="DegreeInProcess/{{user.cnic}}">  In-Process</a>
+        </td>
         <!-- </div> -->
     </tr>
 </table>

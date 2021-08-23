@@ -34,7 +34,7 @@ export class DegreesInPendingComponent implements OnInit {
     await this.API.apiGetDBData(url).then(res => { (this.data = res); })
 
     for (var data of this.data) {
-      if (data.status != true) {
+      if (data.to_verify && data.status!=true) { 
         this.userData.push(data)
       }
     }

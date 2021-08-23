@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule,routingcomponent } from './app-routing.module';
+import { AppRoutingModule, routingcomponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataTablesModule } from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,6 +14,7 @@ import { InprocessStudentsComponent } from './university/inprocess-students/inpr
 import { VerifiedStudentsComponent } from './university/verified-students/verified-students.component';
 import { AllStudentsComponent } from './university/all-students/all-students.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,14 +26,14 @@ import { AllStudentsComponent } from './university/all-students/all-students.com
     InprocessStudentsComponent,
     VerifiedStudentsComponent,
     AllStudentsComponent,
-    ],
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DataTablesModule,
     HttpClientModule,
     FormsModule,
-    NgxCsvParserModule
+    NgxCsvParserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

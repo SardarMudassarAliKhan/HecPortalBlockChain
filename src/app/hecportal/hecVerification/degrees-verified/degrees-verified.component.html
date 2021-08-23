@@ -12,10 +12,14 @@
     </tr>
 
     <tr *ngFor=" let user of userData ">
-        <td>{{ user.cnic }}</td>
+        <td>
+            <a href="DocumentViewer/{{user.cnic}}">{{ user.cnic }}</a>
+        </td>
         <td>{{ user.email }}</td>
         <td>{{ user.department }}</td>
-        <td *ngIf="user.status" style="color: wheat;  font-weight: bold; background-color: yellowgreen;">
-            Verified</td>
+        <td>
+            <a style="color: yellowgreen;  font-weight: bold;" href="DocumentViewer/{{user.cnic}}">Verified</a>
+
+        </td>
     </tr>
 </table>
